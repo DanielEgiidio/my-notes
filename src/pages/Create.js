@@ -9,7 +9,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
