@@ -11,6 +11,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 import Avatar from '@material-ui/core/Avatar';
 
 
@@ -81,7 +82,7 @@ const Layout = ({ children }) => {
             >
                 <Toolbar>
                     <Typography className={classes.date} >
-                       Hoje é { format(new Date(), 'do MMMM Y')}
+                       Hoje é { format(new Date('abr/2017'),'yyyy-MM', { locale: ptBR })}
                     </Typography>
                     <Typography>
                         User
