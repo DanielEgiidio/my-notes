@@ -82,7 +82,7 @@ const Layout = ({ children }) => {
             >
                 <Toolbar>
                     <Typography className={classes.date} >
-                       Hoje é { format(new Date('abr/2017'),'yyyy-MM', { locale: ptBR })}
+                       Hoje é { format(new Date(),'dd-MM-yyyy', { locale: ptBR })}
                     </Typography>
                     <Typography>
                         User
