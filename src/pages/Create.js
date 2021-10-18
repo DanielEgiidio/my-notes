@@ -28,7 +28,7 @@ export default function Create() {
   const [details, setDetails] = useState('');
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
-  const [category, setCategory] = useState('todos');
+  const [category, setCategory] = useState('money');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,13 +42,13 @@ export default function Create() {
       setDetailsError(true)
     }
 
-    if(title && details) {
-      fetch('http://localhost:3000/notes', {
+    if (title && details) {
+      fetch('http://localhost:8000/notes', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ title, details,category })
-      }).then(()=> history.push('/'))
-    }
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify({ title, details, category })
+      }).then(() => history.push('/'))
+    } 
   }
 
   return (
@@ -90,10 +90,10 @@ export default function Create() {
         <FormControl className={classes.field} >
           <FormLabel>Selecione uma Categoria</FormLabel>
           <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)} >
-            <FormControlLabel  value="Financeiro" control={<Radio />} label="Money"/>
-            <FormControlLabel  value="A Fazer" control={<Radio />} label="Todos"/>
-            <FormControlLabel  value="Lembretes" control={<Radio />} label="Reminders"/>
-            <FormControlLabel  value="Trabalho" control={<Radio />} label="Work"/>
+            <FormControlLabel  value="Financeiro" control={<Radio />} label="Financeiro"/>
+            <FormControlLabel  value="A Fazer" control={<Radio />} label="A Fazer"/>
+            <FormControlLabel  value="Lembretes" control={<Radio />} label="Lembretes"/>
+            <FormControlLabel  value="Trabalho" control={<Radio />} label="Trabalho"/>
           </RadioGroup>
         </FormControl>
 
